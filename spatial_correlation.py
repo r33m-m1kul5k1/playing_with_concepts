@@ -3,13 +3,19 @@ import matplotlib.pyplot as plt
 from scipy.signal import correlate2d
 
 # Create two simple images
-image1 = np.array([[1, 2, 3],
-                   [4, 5, 6],
-                   [7, 8, 9]])
+# image1 = np.array([[0, 0, 0],
+#                    [0, 1, 0],
+#                    [0, 0, 0]])
 
-image2 = np.array([[9, 8, 7],
-                   [6, 5, 4],
-                   [3, 2, 1]])
+image1= np.zeros([25,25])
+image1[3:7,3:7]=1
+image1[15:19,4:8]=1
+image1[15:19,20:24]=1
+
+image2 = np.array([[1, 1, 1],
+                   [1, 1, 1],
+                   [1, 1, 1]])
+
 
 #  Calculate spatial correlation using correlate2d
 correlation = correlate2d(image1, image2, mode='full')
