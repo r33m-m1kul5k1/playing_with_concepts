@@ -3,6 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import patches
 
+
 # https://stackoverflow.com/questions/35751306/python-how-to-pad-numpy-array-with-zeros
 # https://gist.github.com/Chris-hughes10/ba2e074477a2e3016c50ba5befc7874f
 def calculate_slice_bboxes(
