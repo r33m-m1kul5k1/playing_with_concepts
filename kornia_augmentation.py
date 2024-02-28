@@ -37,24 +37,24 @@ h, w = img_tensor.shape[-2:]
 
 
 # Plot image with bounding box and keypoints #
-# aug_list = AugmentationSequential(
-#     K.augmentation.ColorJitter(0.1, 0.1, 0.1, 0.1, p=1.0),
-#     K.augmentation.RandomAffine(360, [0.1, 0.1], [0.7, 1.2], [30.0, 50.0], p=1.0),
-#     K.augmentation.RandomPerspective(0.5, p=1.0),
-#     data_keys=["input", "bbox", "keypoints", "mask"],
-#     same_on_batch=False,
-# )
+aug_list = AugmentationSequential(
+    K.augmentation.ColorJitter(0.1, 0.1, 0.1, 0.1, p=1.0),
+    K.augmentation.RandomAffine(360, [0.1, 0.1], [0.7, 1.2], [30.0, 50.0], p=1.0),
+    K.augmentation.RandomPerspective(0.5, p=1.0),
+    data_keys=["input", "bbox", "keypoints"],
+    same_on_batch=False,
+)
 # aug_list = AugmentationSequential(
 #     K.augmentation.RandomVerticalFlip(p=1.0),
 #     data_keys=["input", "bbox", "keypoints", "mask"],
 #     same_on_batch=False,
 # )
 
-aug_list = AugmentationSequential(
-    K.augmentation.RandomRotation(degrees=90, p=0.5),
-    data_keys=["input", "bbox", "keypoints"],
-    same_on_batch=False,
-)
+# aug_list = AugmentationSequential(
+#     K.augmentation.RandomRotation(degrees=90, p=0.5),
+#     data_keys=["input", "bbox", "keypoints"],
+#     same_on_batch=False,
+# )
 
 
 # The bboxes shape is (1, N, 4, 2) (because we write a polyline)
