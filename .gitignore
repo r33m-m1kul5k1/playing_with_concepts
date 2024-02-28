@@ -1,7 +1,3 @@
-__*
-.i*
-.vscode/tasks.json
-1.png
-fibo
-*.tif
-*.xml
+*.*
+!*.py
+!*.c
